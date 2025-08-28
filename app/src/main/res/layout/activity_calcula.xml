@@ -7,4 +7,55 @@
     android:layout_height="match_parent"
     tools:context=".CalculaActivity">
 
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="24dp"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tvTitulo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Título"
+            android:textAlignment="center"
+            android:textSize="30sp" />
+
+        <EditText
+            android:id="@+id/etNumero1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:ems="10"
+            android:hint="Digite o primeiro número"
+            android:inputType="number" />
+
+        <EditText
+            android:id="@+id/etNumero2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:ems="10"
+            android:hint="Digite o segundo número"
+            android:inputType="number" />
+
+        <Button
+            android:id="@+id/btCalcular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:text="Calcular" />
+
+        <Button
+            android:id="@+id/btVoltar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:text="Voltar" />
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
