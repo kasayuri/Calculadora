@@ -24,8 +24,8 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        Button btEntrar = findViewById(R.id.btCalculadora);
-        btEntrar.setOnClickListener(new View.OnClickListener() {
+        Button btCalculadora = findViewById(R.id.btCalculadora);
+        btCalculadora.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 // Abrir a tela home
@@ -35,5 +35,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        Button btViagem = findViewById(R.id.btViagem);
+        btViagem.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Abrir a tela viagem
+                Intent telaViagem = new Intent(MainActivity.this, ViagemActivity.class);
+                startActivity(telaViagem);
+                finish();
+            }
+        });
     }
 }
