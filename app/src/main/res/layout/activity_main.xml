@@ -27,10 +27,10 @@
             android:textSize="34sp" />
 
         <Button
-            android:id="@+id/btEntrar"
+            android:id="@+id/btCalculadora"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="@string/entrar" />
+            android:text="@string/calculadora" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

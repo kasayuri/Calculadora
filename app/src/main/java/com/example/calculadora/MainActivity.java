@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        Button btEntrar = findViewById(R.id.btEntrar);
+        Button btEntrar = findViewById(R.id.btCalculadora);
         btEntrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
