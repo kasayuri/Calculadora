@@ -24,7 +24,7 @@
             android:layout_height="wrap_content"
             android:text="@string/titulo"
             android:textAlignment="center"
-            android:textSize="20sp" />
+            android:textSize="34sp" />
 
         <Button
             android:id="@+id/btEntrar"
