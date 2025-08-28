@@ -37,19 +37,18 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         btDividir.setOnClickListener(this);
     }
 
-    // It's good practice to implement the onClick method required by View.OnClickListener
     @Override
     public void onClick(View view) {
         Intent telaCalcula = new Intent(HomeActivity.this, CalculaActivity.class);
 
         if (view.getId() == R.id.btSomar) {
-            telaCalcula.putExtra("operacao","somar");
+            telaCalcula.putExtra("operacao","Somar");
         } else if (view.getId() == R.id.btSubtrair) {
-            telaCalcula.putExtra("operacao","subtrair");
+            telaCalcula.putExtra("operacao","Subtrair");
         } else if (view.getId() == R.id.btMultiplicar) {
-            telaCalcula.putExtra("operacao","multiplicar");
+            telaCalcula.putExtra("operacao","Multiplicar");
         } else if (view.getId() == R.id.btDividir) {
-            telaCalcula.putExtra("operacao","dividir");
+            telaCalcula.putExtra("operacao","Dividir");
         }
 
         startActivity(telaCalcula);
