@@ -1,6 +1,9 @@
 package com.example.calculadora;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,7 +11,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,5 +23,35 @@ public class HomeActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        Button btSomar = findViewById(R.id.btSomar);
+        btSomar.setOnClickListener(this);
+
+        Button btSubtrair = findViewById(R.id.btSubtrair);
+        btSubtrair.setOnClickListener(this);
+
+        Button btMultiplicar = findViewById(R.id.btMultiplicar);
+        btMultiplicar.setOnClickListener(this);
+
+        Button btDividir = findViewById(R.id.btDividir);
+        btDividir.setOnClickListener(this);
+    }
+
+    // It's good practice to implement the onClick method required by View.OnClickListener
+    @Override
+    public void onClick(View view) {
+        Intent telaCalcula = new Intent(HomeActivity.this, CalculaActivity.class);
+
+        if (view.getId() == R.id.btSomar) {
+            telaCalcula.putExtra("operacao","somar");
+        } else if (view.getId() == R.id.btSubtrair) {
+            telaCalcula.putExtra("operacao","subtrair");
+        } else if (view.getId() == R.id.btMultiplicar) {
+            telaCalcula.putExtra("operacao","multiplicar");
+        } else if (view.getId() == R.id.btDividir) {
+            telaCalcula.putExtra("operacao","dividir");
+        }
+
+        startActivity(telaCalcula);
     }
 }
