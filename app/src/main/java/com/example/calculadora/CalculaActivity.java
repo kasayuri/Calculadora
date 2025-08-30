@@ -1,5 +1,6 @@
 package com.example.calculadora;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -43,6 +44,8 @@ public class CalculaActivity extends AppCompatActivity implements View.OnClickLi
     @Override
     public void onClick(View view) {
         if (view.getId() == R.id.btVoltar) {
+            Intent telaHome = new Intent(CalculaActivity.this, MainActivity.class);
+            startActivity(telaHome);
             finish();
         } else if (view.getId() == R.id.btCalcular) {
             calcular();
