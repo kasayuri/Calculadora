@@ -8,9 +8,9 @@
     <string name="dividir_numeros">Dividir números</string>
     <string name="viagem">Viagem</string>
     <string name="Titulo_custos_de_viagem">Calcular Custos de Viagem</string>
-    <string name="distancia_km">distância (km)</string>
-    <string name="valor_litro_combustivel">valor do litro do combustível (R$)</string>
-    <string name="media_quilometros_litro">média de quilômetros por litro (km)</string>
+    <string name="distancia_km">Distância (km)</string>
+    <string name="valor_litro_combustivel">Valor do litro do combustível (R$)</string>
+    <string name="media_quilometros_litro">Média de quilômetros por litro (km)</string>
     <string name="calcular">Calcular</string>
     <string name="voltar">Voltar</string>
 </resources>
