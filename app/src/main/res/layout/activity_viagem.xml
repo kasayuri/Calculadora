@@ -23,7 +23,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="15dp"
-            android:text="Calcular Custos de Viagem"
+            android:text="@string/Titulo_custos_de_viagem"
             android:textAlignment="center"
             android:textSize="30sp" />
 
@@ -34,7 +34,7 @@
             android:layout_marginTop="30dp"
             android:layout_marginBottom="15dp"
             android:ems="10"
-            android:hint="distância (km)"
+            android:hint="@string/distancia_km"
             android:inputType="numberDecimal"
             android:textAlignment="center" />
 
@@ -44,7 +44,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="15dp"
             android:ems="10"
-            android:hint=" valor do litro do combustível (R$)"
+            android:hint="@string/valor_litro_combustivel"
             android:inputType="numberDecimal"
             android:textAlignment="center" />
 
@@ -54,7 +54,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="15dp"
             android:ems="10"
-            android:hint="média de quilômetros por litro (km)"
+            android:hint="@string/media_quilometros_litro"
             android:inputType="numberDecimal"
             android:textAlignment="center" />
 
@@ -64,13 +64,13 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:layout_marginBottom="15dp"
-            android:text="Calcular" />
+            android:text="@string/calcular" />
 
         <Button
             android:id="@+id/btVoltarViagem"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="15dp"
-            android:text="Voltar" />
+            android:text="@string/voltar" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

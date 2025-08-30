@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         btViagem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // Abrir a tela viagem
+                // Abrir a tela de estimar custos de viagem
                 Intent telaViagem = new Intent(MainActivity.this, ViagemActivity.class);
                 startActivity(telaViagem);
                 finish();

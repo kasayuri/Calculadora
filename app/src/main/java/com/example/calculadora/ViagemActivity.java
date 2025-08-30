@@ -13,6 +13,8 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import java.util.Locale;
+
 public class ViagemActivity extends AppCompatActivity implements View.OnClickListener {
 
     @Override
@@ -50,16 +52,37 @@ public class ViagemActivity extends AppCompatActivity implements View.OnClickLis
         EditText etValorCombustivelViagem = findViewById(R.id.etValorCombustivelViagem);
         EditText etMediaKmPorLViagem = findViewById(R.id.etMediaKmPorLViagem);
 
-        double distancia = Double.parseDouble(etDistanciaViagem.getText().toString());
-        double valorCombustivel = Double.parseDouble(etValorCombustivelViagem.getText().toString());
-        double mediaKmPorL = Double.parseDouble(etMediaKmPorLViagem.getText().toString());
+        String distanciaStr = etDistanciaViagem.getText().toString();
+        String valorCombustivelStr = etValorCombustivelViagem.getText().toString();
+        String mediaKmPorLStr = etMediaKmPorLViagem.getText().toString();
 
-        double custoViagem = (distancia / mediaKmPorL) * valorCombustivel;
-        String resultado = String.format("%.2f", custoViagem);
+        // Validar campos
+        if (distanciaStr.isEmpty() || valorCombustivelStr.isEmpty() || mediaKmPorLStr.isEmpty()) {
+            Toast.makeText(this, "Por favor, preencha todos os campos.", Toast.LENGTH_SHORT).show();
+            return;
+        }
 
-        Toast.makeText(ViagemActivity.this,
-                        "Resultado: R$ ".concat(String.valueOf(resultado)),
-                        Toast.LENGTH_LONG)
-                .show();
+        try {
+            double distancia = Double.parseDouble(distanciaStr);
+            double valorCombustivel = Double.parseDouble(valorCombustivelStr);
+            double mediaKmPorL = Double.parseDouble(mediaKmPorLStr);
+
+            if (mediaKmPorL == 0) {
+                Toast.makeText(this, "A média de Km/L não pode ser zero.", Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            double custoViagem = (distancia / mediaKmPorL) * valorCombustivel;
+
+            Locale brasilLocale = new Locale("pt", "BR");
+            String resultado = String.format(brasilLocale, "%.2f", custoViagem);
+
+            Toast.makeText(ViagemActivity.this,
+                            "Custo da Viagem: R$ " + resultado,
+                            Toast.LENGTH_LONG)
+                    .show();
+        } catch (NumberFormatException e) {
+            Toast.makeText(this, "Por favor, insira valores numéricos válidos.", Toast.LENGTH_SHORT).show();
+        }
     }
 }
